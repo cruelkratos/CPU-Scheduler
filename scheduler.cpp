@@ -3,6 +3,8 @@
 #include <queue>
 #include <algorithm>
 #include <sstream>
+#include <chrono>
+#include <sys/time.h>
 
 struct Process {
     int id;
@@ -13,6 +15,9 @@ struct Process {
     int waitingTime;
     int turnAroundTime;
 };
+
+const double TIME_CUTOFF = 1.0;
+const int ITERATIONS = 1e6;
 
 std::vector<Process> parseInput(const std::string& input) {
     std::vector<Process> processes;
@@ -42,7 +47,10 @@ std::vector<Process> parseInput(const std::string& input) {
 void FCFS(std::vector<Process>& processes) {
     int n = processes.size();
     int currentTime = 0;
-
+    auto cmp = [&](Process P1, Process P2) -> bool{
+        return P1.arrivalTime < P2.arrivalTime;
+    };
+    std::sort(processes.begin(), processes.end(), cmp);
     for (int i = 0; i < n; ++i) {
         if (currentTime < processes[i].arrivalTime) {
             currentTime = processes[i].arrivalTime;
@@ -123,6 +131,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
+    auto chrono_begin = std::chrono::steady_clock::now();
     std::string algorithm = argv[1];
     std::string input = argv[2];
 
@@ -141,7 +150,21 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    std::cout << "[";
+    double totalTAT = 0;
+    double totalWT = 0;
+    int n = processes.size();
+
+    for (const auto& process : processes) {
+        totalTAT += process.turnAroundTime;
+        totalWT += process.waitingTime;
+    }
+
+    double averageTAT = totalTAT / n;
+    double averageWT = totalWT / n;
+    
+    
+
+    std::cout << "{ \"processes\": [";
     for (size_t i = 0; i < processes.size(); ++i) {
         std::cout << "{"
                   << "\"id\":" << processes[i].id << ","
@@ -156,7 +179,12 @@ int main(int argc, char* argv[]) {
             std::cout << ",";
         }
     }
-    std::cout << "]";
+    auto chrono_end = std::chrono::steady_clock::now();
+    double schedulingOverhead = 1e-6 * std::chrono::duration_cast<std::chrono::microseconds>(chrono_end - chrono_begin).count();
+    std::cout << "],"
+              << "\"averageTAT\": " << averageTAT << ","
+              << "\"averageWT\": " << averageWT << ","
+              << "\"schedulingOverhead\": " << schedulingOverhead << "}";
     std::cout.flush();
     return 0;
 }
