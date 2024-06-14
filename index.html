@@ -3,21 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Scheduler App</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
-<body>
-    <label for="algorithmSelect">Select Algorithm:</label>
-    <select id="algorithmSelect">
-        <option value="FCFS">FCFS</option>
-        <option value="RR">Round Robin</option>
-        <option value="SJF">Shortest Job First</option>
-        <option value="Priority">Priority Scheduling</option>
-    </select>
-    <br>
-    <textarea id="processInput" placeholder="Enter process details"></textarea>
-    <br>
-    <button id="runSchedulerBtn">Run Scheduler</button>
-    <pre id="result"></pre>
-
+<body class="bg-dark text-white container mt-5">
+    <div class="card bg-secondary text-white">
+        <div class="card-body">
+            <h1 class="card-title">Scheduler App</h1>
+            <div class="form-group">
+                <label for="algorithmSelect">Select Algorithm:</label>
+                <select class="form-control bg-dark text-white" id="algorithmSelect">
+                    <option value="FCFS">FCFS</option>
+                    <option value="RR">Round Robin</option>
+                    <option value="SJF">Shortest Job First</option>
+                    <option value="Priority">Priority Scheduling</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="processInput">Enter Process Details:</label>
+                <textarea class="form-control bg-dark text-white" id="processInput" placeholder="Enter process details" rows="3"></textarea>
+            </div>
+            <button class="btn btn-primary" id="runSchedulerBtn">Run Scheduler</button>
+            <pre id="result" class="mt-3 bg-dark text-white p-3 rounded"></pre>
+        </div>
+    </div>
     <script src="renderer.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

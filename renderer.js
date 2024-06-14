@@ -17,8 +17,12 @@ ipcRenderer.on('schedulerResult', (event, { error, result }) => {
     if (error) {
         console.log(`Scheduler error: ${error}`);
         resultElement.innerText = `Error: ${error}`;
+        resultElement.classList.add('text-danger');
+        resultElement.classList.remove('text-success');
     } else {
         console.log('Scheduler result:', result);
         resultElement.innerText = JSON.stringify(result, null, 2);
+        resultElement.classList.add('text-success');
+        resultElement.classList.remove('text-danger');
     }
 });
