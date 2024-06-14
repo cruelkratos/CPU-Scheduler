@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Scheduler App</title>
+</head>
+<body>
+    <label for="algorithmSelect">Select Algorithm:</label>
+    <select id="algorithmSelect">
+        <option value="FCFS">FCFS</option>
+        <option value="RR">Round Robin</option>
+        <option value="SJF">Shortest Job First</option>
+        <option value="Priority">Priority Scheduling</option>
+    </select>
+    <br>
+    <textarea id="processInput" placeholder="Enter process details"></textarea>
+    <br>
+    <button id="runSchedulerBtn">Run Scheduler</button>
+    <pre id="result"></pre>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
