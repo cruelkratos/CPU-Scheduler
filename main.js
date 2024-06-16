@@ -6,8 +6,8 @@ let mainWindow;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 1200,
+        height: 900,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false
@@ -16,8 +16,6 @@ function createWindow() {
 
     mainWindow.loadFile('index.html');
 
-    // Open DevTools for debugging (optional)
-    mainWindow.webContents.openDevTools();
 }
 
 app.on('ready', createWindow);

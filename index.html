@@ -2,15 +2,16 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Scheduler App</title>
+    <title>CPU Scheduler App</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
 <body class="bg-dark text-white container mt-5">
     <div class="d-flex justify-content-center">
         <div class="card bg-secondary text-white" style="width: 60%;">
             <div class="card-body">
-                <h1 class="card-title">Scheduler App</h1>
+                <h1 class="card-title">CPU Scheduler App</h1>
                 <div class="form-group">
                     <label for="algorithmSelect">Select Algorithm:</label>
                     <select class="form-control bg-dark text-white" id="algorithmSelect">
@@ -36,8 +37,11 @@
                 <p id="averageWT"></p>
                 <p id="cpuOverhead"></p> <!-- Add this line -->
             </div>
+            
         </div>
+        
     </div>
+    <div id="gantt-chart"></div>
     <script src="renderer.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
