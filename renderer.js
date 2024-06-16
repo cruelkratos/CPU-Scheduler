@@ -30,7 +30,7 @@ ipcRenderer.on('schedulerResult', (event, { error, result }) => {
         
         averageTATElement.innerText = `Average Turnaround Time: ${averageTAT}`;
         averageWTElement.innerText = `Average Waiting Time: ${averageWT}`;
-        cpuOverheadElement.innerText = `Scheduling Overhead: ${schedulingOverhead.toFixed(6)} s`; // Updated to show float value with units
+        cpuOverheadElement.innerText = `Scheduling Overhead: ${schedulingOverhead.toFixed(12)} s`; // Updated to show float value with units
 
         averageBox.style.display = 'block';
         
