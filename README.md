@@ -1,5 +1,7 @@
 # CPU Scheduler Application Report
 
+Made for ACM Open Projects Summer of 2024
+
 ## Introduction
 
 Operating systems play a crucial role in managing computer resources efficiently, with process scheduling being a fundamental component. The CPU Scheduler application presented in this report aims to simulate and evaluate various process scheduling algorithms through an intuitive user interface built using Electron and robust backend algorithms implemented in C++.
