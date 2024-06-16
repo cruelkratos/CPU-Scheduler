@@ -6,6 +6,11 @@ Made for ACM Open Projects Summer of 2024
 
 Operating systems play a crucial role in managing computer resources efficiently, with process scheduling being a fundamental component. The CPU Scheduler application presented in this report aims to simulate and evaluate various process scheduling algorithms through an intuitive user interface built using Electron and robust backend algorithms implemented in C++.
 
+## Installation
+- Compile the scheduler.cpp file using a compiler with C++ 11 or higher
+- run npm install to install all dependencies
+- run npm start to run the project 
+
 ### Purpose and Significance
 
 The primary purpose of the CPU Scheduler application is to provide a platform for studying and comparing different process scheduling algorithms in a controlled environment. Process scheduling is critical for optimizing resource utilization and improving system performance by effectively allocating CPU time among competing processes. By implementing algorithms such as First-Come, First-Served (FCFS), Round Robin (RR), Shortest Job First (SJF), Priority Scheduling, and an automated scheduler, the application allows users to analyze their effectiveness under different scenarios.
