@@ -9,7 +9,13 @@ Operating systems play a crucial role in managing computer resources efficiently
 ## Installation
 - Compile the scheduler.cpp file using a compiler with C++ 11 or higher
 - run npm install to install all dependencies
-- run npm start to run the project 
+- run npm start to run the project
+
+``` shell
+g++ -o scheduler.exe scheduler.cpp
+npm install
+npm start
+```
 
 ### Purpose and Significance
 
