@@ -85,6 +85,11 @@ Figure 1: High-level System Architecture of the CPU Scheduler Application
 
 The Electron frontend of the CPU Scheduler application provides a user-friendly interface for interacting with the scheduling algorithms implemented in the backend. This section outlines the architecture, features, and interaction flow of the Electron frontend.
 
+![image](https://github.com/cruelkratos/CPU-Scheduler/assets/116339436/05cfacea-8414-4ef5-9993-466763a55a40)
+![image](https://github.com/cruelkratos/CPU-Scheduler/assets/116339436/0ed66847-e4cc-4bc9-881c-a177b4b2d20a)
+![image](https://github.com/cruelkratos/CPU-Scheduler/assets/116339436/42d1e32a-9989-432f-ac4f-0154d5e5fd6c)
+
+
 ### Architecture
 
 The Electron frontend architecture consists of several key components:
